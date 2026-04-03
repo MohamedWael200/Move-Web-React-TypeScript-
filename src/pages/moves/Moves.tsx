@@ -20,7 +20,7 @@ function Moves() {
     const totalPages = Math.ceil((moves?.length || 0) / itemsPerPage);
 
     // وظيفة لتغيير الصفحة والتمرير للأعلى
-    const paginate = (pageNumber) => {
+    const paginate = (pageNumber : number) => {
         setCurrentPage(pageNumber);
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
