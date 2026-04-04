@@ -9,7 +9,7 @@ function Header() {
                     {/* Logo / Brand Name */}
                     <div className="flex-shrink-0">
                         <h1 className="text-2xl font-bold text-blue-600 cursor-pointer">
-                            MyBrand
+                            Maloka
                         </h1>
                     </div>
 
