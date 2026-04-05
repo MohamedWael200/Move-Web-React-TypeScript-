@@ -24,9 +24,9 @@ function App() {
       <>
           <Hero />
           <Slider moves={topRateMoves} loading={loading} title="Top Rate Moves" />
-          <Slider moves={actionMovies} loading={loading} title="Action Moves" />
           <Slider moves={romanticMovies} loading={loading} title="Romantic Moves" />
           <Slider moves={animationMovies} loading={loading} title="Animation Moves" />
+          <Slider moves={actionMovies} loading={loading} title="Action Moves" />
           <Reviews />
       </>
   )

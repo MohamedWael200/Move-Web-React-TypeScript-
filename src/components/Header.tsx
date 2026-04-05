@@ -35,6 +35,15 @@ function Header() {
                         </NavLink>
                     </nav>
 
+                    <nav className="hidden md:flex space-x-8">
+                        <NavLink
+                            to="/register"
+                            className="text-gray-700 hover:text-blue-600 font-medium transition duration-150 ease-in-out"
+                        >
+                            Register
+                        </NavLink>
+                    </nav>
+
                     {/* Mobile Menu Button (Optional Appearance) */}
                     <div className="md:hidden">
                         <button className="text-gray-700 focus:outline-none">
