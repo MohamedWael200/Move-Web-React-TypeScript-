@@ -5,3 +5,8 @@ export type registerPayload = {
     bio: string;
     avatar: File | null;
 }
+
+export type LoginPayload = {
+    email: string;
+    password: string;
+};

@@ -1,5 +1,5 @@
 import { useMakeRegister } from "../../service/authApi.ts";
-import { type FormEvent, useEffect, useState } from "react";
+import { type FormEvent, useState } from "react";
 import { Link } from "react-router";
 
 function Register() {
@@ -12,22 +12,19 @@ function Register() {
         avatar: null
     });
 
-    useEffect(() => {
-        if (success) {
-            setForm({
-                name: "",
-                email: "",
-                password: "",
-                bio: "",
-                avatar: "",
-            });
-        }
-    }, [success]);
-
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
+
         await makeRegister(form);
-    }
+
+        setForm({
+            name: "",
+            email: "",
+            password: "",
+            bio: "",
+            avatar: null,
+        });
+    };
 
     return (
         <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
