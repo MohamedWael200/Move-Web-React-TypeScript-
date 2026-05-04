@@ -1,5 +1,5 @@
-import {useState} from "react";
-import type {LoginPayload, registerPayload} from "../types/registerData.ts";
+import {useEffect, useState} from "react";
+import type {LoginPayload, profileDataApiResponse, ProfilePayload, registerPayload} from "../types/registerData.ts";
 
 export function useMakeRegister() {
     const [loading, setLoading] = useState(false);
@@ -78,4 +78,46 @@ export function useLogin() {
     };
 
     return { login, loading, error };
+}
+
+export function useGetProfile() {
+    const [profile, setProfile] = useState<ProfilePayload | null>(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
+
+    const fetchProfile = async (token: string) => {
+        try {
+            const response = await fetch("http://127.0.0.1:8000/api/profile", {
+                method: "GET",
+                headers: {
+                    "Accept": "application/json", // 👈 أضف هذا لضمان استلام JSON
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+
+            const data: profileDataApiResponse = await response.json();
+            if (!response.ok) {
+                throw new Error(data?.message || "Failed to fetch profile");
+            }
+
+            setProfile(data.data);
+        } catch (err: any) {
+            setError(err.message);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");  // 👈 هات التوكن من ال localStorage
+        if (token) {
+            fetchProfile(token);
+        } else {
+            setError("No token found");
+            setLoading(false);
+        }
+    }, []);
+
+    return { profile, loading, error };
 }

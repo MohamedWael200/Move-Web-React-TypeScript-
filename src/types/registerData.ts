@@ -10,3 +10,16 @@ export type LoginPayload = {
     email: string;
     password: string;
 };
+
+export type profileDataApiResponse = {
+    data : ProfilePayload;
+}
+
+
+export type ProfilePayload = {
+    id : number;
+    name: string;
+    email: string;
+    avatar: string | null;
+    bio: string;
+}
