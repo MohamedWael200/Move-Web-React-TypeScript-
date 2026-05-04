@@ -80,15 +80,15 @@ function MoveDetails() {
                             </div>
                         </div>
 
-                        {/* Action Buttons */}
-                        {/*<div className="flex flex-col sm:flex-row gap-4 mt-8">*/}
-                        {/*    <button className="flex-1 bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-blue-700 transition-all shadow-lg shadow-blue-200 active:scale-95">*/}
-                        {/*        Watch Now*/}
-                        {/*    </button>*/}
-                        {/*    <button className="flex-1 bg-gray-100 text-gray-800 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-gray-200 transition-all active:scale-95">*/}
-                        {/*        Add to Wishlist*/}
-                        {/*    </button>*/}
-                        {/*</div>*/}
+                         Action Buttons
+                        <div className="flex flex-col sm:flex-row gap-4 mt-8">
+                            <button className="flex-1 bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-blue-700 transition-all shadow-lg shadow-blue-200 active:scale-95">
+                                Watched
+                            </button>
+                            <button className="flex-1 bg-gray-100 text-gray-800 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-gray-200 transition-all active:scale-95">
+                                Watch Letter
+                            </button>
+                        </div>
                     </div>
 
                 </div>

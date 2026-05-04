@@ -9,6 +9,8 @@ import Contact from "./pages/contact/Contact.tsx";
 import NotFound from "./components/NotFound.tsx";
 import MoveDetails from "./pages/moves/MoveDetails.tsx";
 import Register from "./pages/auth/Register.tsx";
+import Login from "./pages/auth/Login.tsx";
+import Profile from "./pages/auth/Profile.tsx";
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -20,6 +22,8 @@ createRoot(document.getElementById('root')!).render(
                   <Route path="move/:id" element={<MoveDetails />} />
                   <Route path="contact" element={<Contact />} />
                   <Route path="/register" element={<Register />} />
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/profile" element={<Profile />} />
               </Route>
               <Route path="*" element={<NotFound />} />
           </Routes>
